@@ -4,7 +4,7 @@ export const achievements: Achievement[] = [
   {
     id: "1",
     title: "Hackathon Winner",
-    description: "First place at the State-level Hackathon for building an AI-powered civic reporting system.",
+    description: "First place at the State-level Hackathon for building a civic reporting system powered by AI.",
     date: "2024",
     icon: "emoji_events",
     color: "tertiary",
@@ -12,7 +12,7 @@ export const achievements: Achievement[] = [
   {
     id: "2",
     title: "Open Source Contributor",
-    description: "Active contributor to major open-source projects with 50+ merged pull requests.",
+    description: "Active contributor to major open-source projects with 50+ code contributions accepted.",
     date: "2023",
     icon: "code",
     color: "primary",
@@ -28,7 +28,7 @@ export const achievements: Achievement[] = [
   {
     id: "4",
     title: "Research Publication",
-    description: "Published a paper on smart city infrastructure optimization using ML algorithms.",
+    description: "Published a research paper on improving city infrastructure using machine learning.",
     date: "2024",
     icon: "article",
     color: "secondary",

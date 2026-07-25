@@ -27,9 +27,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Srushti Dedaniya | Creative Architect",
+  title: "Srushti Dedaniya | Full-Stack Developer",
   description:
-    "Designing experiences. Building software. Solving real-world problems through the lens of digital craftsmanship.",
+    "I build clean, fast websites and apps. Passionate about UI/UX design, full-stack development, and solving real problems with code.",
 };
 
 export default function RootLayout({

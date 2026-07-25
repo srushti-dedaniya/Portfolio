@@ -9,8 +9,8 @@ export default function Footer() {
           Srushti Dedaniya
         </div>
         <p className="font-label-md text-label-md text-on-surface-variant opacity-60">
-          &copy; {new Date().getFullYear()} Srushti Dedaniya. Crafted in Liquid
-          Light.
+          &copy; {new Date().getFullYear()} Srushti Dedaniya. Built with
+          passion.
         </p>
       </div>
       <div className="flex gap-8">

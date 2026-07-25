@@ -8,8 +8,9 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const navLinks = [
-  { label: "Universe", href: "/" },
-  { label: "Innovation", href: "/projects" },
-  { label: "Story", href: "/about" },
-  { label: "Connect", href: "/contact" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
 ];

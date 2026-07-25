@@ -6,9 +6,9 @@ export const projects: Project[] = [
     title: "BagFix Pro",
     slug: "bagfix-pro",
     description:
-      "The ultimate ecosystem for luxury bag restoration. Streamlining craftsman workflows with high-tech diagnostic tools and solar-smooth client interfaces.",
+      "An app that helps luxury bag owners find trusted repair professionals. Clients can track repairs, get diagnostics, and communicate easily with craftspeople.",
     longDescription:
-      "BagFix Pro revolutionizes the luxury bag restoration industry by providing a comprehensive digital platform that connects skilled craftspeople with discerning clients. The platform features real-time diagnostic assessment tools, progress tracking, and a seamless communication system that bridges the gap between traditional craftsmanship and modern technology.",
+      "BagFix Pro connects people who own luxury bags with skilled repair professionals. The platform makes it easy to request repairs, track progress in real-time, and communicate directly with the craftsman. It brings a traditional service into the digital age.",
     tags: [
       { label: "Web Platform", variant: "primary" },
       { label: "Luxury Service", variant: "tertiary" },
@@ -27,9 +27,9 @@ export const projects: Project[] = [
     title: "Patel Bag House",
     slug: "patel-bag-house",
     description:
-      "A digital transformation for a legacy retail brand, merging tradition with an experimental eCommerce experience.",
+      "A modern online store for a family-owned bag shop. We brought their decades-old business online while keeping the brand feel their customers love.",
     longDescription:
-      "Patel Bag House represents the perfect blend of heritage and innovation. This project transformed a decades-old retail business into a modern eCommerce powerhouse while preserving the brand's rich history and customer relationships.",
+      "Patel Bag House is a family business that has been around for decades. This project took their physical store online with a modern eCommerce website, making it easy for customers to browse and buy from anywhere while keeping the brand's heritage and feel intact.",
     tags: [],
     imageUrl:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuC5eygCMLcRCG5Cv28HHSOTlGYcxCgkyz8XpSxUGgi6GIl4ED6ggGrb0s3u-GX89W4hbGen4PK5M-mSnn2GZhcGslAvJtlKhg2stTVuf3loaD4e40Bw4HvMuGAnpGKpKkmfr_HWSwIPS49UaLkiYtPDyDAYr2dz52oz8BlnUKj18f71s9XMC3RMfSbLQqp7eZnTktnfd46PoGkKZZHVaf6b9n587X-NgjVRsPTW-Rj19LQ0WYc6FP7XXNcVtLduR2Kp_V0GhUFkU0fp",
@@ -45,9 +45,9 @@ export const projects: Project[] = [
     title: "Guardian Path",
     slug: "women-safety",
     description:
-      "A safety-focused travel application utilizing real-time data and community signals to empower women travelers.",
+      "A safety app for women travelers. It uses real-time data and community reports to help users stay safe while exploring new places.",
     longDescription:
-      "Guardian Path is a safety-first travel application designed to empower women travelers through real-time data analysis, community-driven safety signals, and intelligent route optimization. The app combines cutting-edge technology with intuitive design to create a reliable companion for women exploring the world.",
+      "Guardian Path is built to keep women travelers safe. The app combines real-time location data, community-driven safety reports, and smart route suggestions to help users feel confident and secure wherever they go.",
     tags: [],
     imageUrl: "",
     imageAlt: "",
@@ -62,9 +62,9 @@ export const projects: Project[] = [
     title: "Civic Pulse",
     slug: "smart-civic",
     description:
-      "Reimagining government-citizen interactions through a unified, liquid-motion dashboard for smart city services.",
+      "A dashboard that makes it easy for citizens to report issues and track city services. One place for all civic complaints and updates.",
     longDescription:
-      "Civic Pulse transforms how citizens interact with their local government. This smart city dashboard provides real-time civic reporting, service tracking, and community engagement tools that make urban living more responsive and transparent.",
+      "Civic Pulse makes it simple for people to interact with their local government. Citizens can report problems like potholes or broken lights, track the status of their complaints, and see what is happening in their neighborhood — all from one easy-to-use dashboard.",
     tags: [],
     imageUrl: "",
     imageAlt: "",

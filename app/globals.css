@@ -31,6 +31,10 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-primary-container;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {
@@ -63,6 +67,21 @@
     transform: scale(0.95);
   }
 
+  .feature-card--primary:hover {
+    border-color: rgba(255, 193, 116, 0.2);
+    box-shadow: 0 8px 40px rgba(255, 193, 116, 0.08);
+  }
+
+  .feature-card--tertiary:hover {
+    border-color: rgba(245, 200, 12, 0.2);
+    box-shadow: 0 8px 40px rgba(245, 200, 12, 0.08);
+  }
+
+  .feature-card--secondary:hover {
+    border-color: rgba(255, 179, 173, 0.2);
+    box-shadow: 0 8px 40px rgba(255, 179, 173, 0.08);
+  }
+
   .solar-glow {
     box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
   }
@@ -90,6 +109,25 @@
     z-index: -1;
     overflow: hidden;
   }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 25s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @layer utilities {
@@ -99,6 +137,15 @@
 
   .text-gradient-secondary {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 

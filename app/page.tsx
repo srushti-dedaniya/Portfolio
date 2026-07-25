@@ -1,18 +1,34 @@
 import AuroraBackground from "@/components/home/AuroraBackground";
-import Hero from "@/components/home/Hero";
 import FloatingShapes from "@/components/home/FloatingShapes";
+import Hero from "@/components/home/Hero";
+import Marquee from "@/components/home/Marquee";
+import AboutSection from "@/components/home/AboutSection";
 import FeatureCards from "@/components/home/FeatureCards";
+import SkillsSection from "@/components/home/SkillsSection";
+import ProjectsSection from "@/components/home/ProjectsSection";
+import ExperienceSection from "@/components/home/ExperienceSection";
+import AchievementsSection from "@/components/home/AchievementsSection";
+import ContactSection from "@/components/home/ContactSection";
 
 export default function Home() {
   return (
     <>
       <AuroraBackground />
       <FloatingShapes />
-      <main className="relative min-h-screen flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop pt-32">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] pointer-events-none" />
-        <Hero />
-        <FeatureCards />
-      </main>
+      <Hero />
+      <Marquee text="Get to know me" />
+      <AboutSection />
+      <FeatureCards />
+      <Marquee text="What I work with" />
+      <SkillsSection />
+      <Marquee text="My projects" />
+      <ProjectsSection />
+      <Marquee text="My journey" />
+      <ExperienceSection />
+      <Marquee text="Milestones and wins" />
+      <AchievementsSection />
+      <Marquee text="Let's connect" />
+      <ContactSection />
     </>
   );
 }
