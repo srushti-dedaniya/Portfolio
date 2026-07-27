@@ -165,6 +165,18 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     GitHub
                   </a>
                 )}
+                {project.downloadUrl && (
+                  <a
+                    href={project.downloadUrl}
+                    download
+                    className="btn-primary"
+                  >
+                    <span className="material-symbols-outlined text-lg">
+                      download
+                    </span>
+                    Download APK
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

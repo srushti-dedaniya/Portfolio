@@ -14,6 +14,7 @@ export interface Project {
   stats?: { label: string; value: string }[];
   liveUrl?: string;
   githubUrl?: string;
+  downloadUrl?: string;
 }
 
 export interface SkillCategory {

@@ -48,9 +48,7 @@ export default function ProjectsSection() {
                 key={project.id}
                 variants={fadeInUp}
                 onClick={() => setSelectedProject(project)}
-                className={`bento-card overflow-hidden flex flex-col cursor-pointer group ${
-                  index === 0 ? "md:row-span-2" : ""
-                }`}
+                className="bento-card overflow-hidden flex flex-col cursor-pointer group"
               >
                 {project.imageUrl ? (
                   <div
@@ -71,7 +69,7 @@ export default function ProjectsSection() {
                   </div>
                 )}
 
-                <div className="p-6 flex flex-col gap-4 flex-grow">
+                <div className="p-6 flex flex-col gap-4">
                   <div className="flex items-center gap-3">
                     {project.status && (
                       <span
@@ -91,7 +89,7 @@ export default function ProjectsSection() {
                     {project.title}
                   </h3>
 
-                  <p className="text-secondary text-body-sm leading-relaxed flex-grow">
+                  <p className="text-secondary text-body-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 

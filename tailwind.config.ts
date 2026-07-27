@@ -28,7 +28,7 @@ const config: Config = {
         full: "9999px",
       },
       spacing: {
-        "container-max": "1200px",
+        "container-max": "1400px",
         gutter: "24px",
         section: "100px",
       },
