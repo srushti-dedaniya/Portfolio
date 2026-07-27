@@ -43,14 +43,14 @@ export default function Hero() {
               variants={fadeInUp}
               className="flex flex-wrap items-center gap-4"
             >
-              <a href="#projects" className="btn-primary">
+              <a href="/resume/Srushti_Dedaniya_Resume.pdf" download className="btn-primary">
                 <span className="material-symbols-outlined text-lg">
-                  arrow_outward
+                  download
                 </span>
-                View Projects
+                Download Resume
               </a>
-              <a href="#contact" className="btn-outline">
-                Contact Me
+              <a href="#projects" className="btn-outline">
+                View Projects
               </a>
             </motion.div>
           </div>

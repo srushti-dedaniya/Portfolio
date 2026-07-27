@@ -2,12 +2,12 @@ import { Education } from "@/types/project";
 
 export const education: Education[] = [
   {
-    institution: "University Name",
-    degree: "Bachelor of Technology",
+    institution: "Shah and Anchor Kutchhi Engineering College",
+    degree: "Bachelor of Engineering",
     field: "Computer Science and Engineering",
-    startDate: "2021",
-    endDate: "2025",
+    startDate: "2024",
+    endDate: "2028",
     description:
-      "Specializing in Software Engineering and Intelligent Systems. Active member of the Coding Club and Hackathon Society.",
+      "Currently pursuing BE in Computer Science. Active member of the Coding Club and exploring full-stack development, AI/ML, and open-source contributions.",
   },
 ];

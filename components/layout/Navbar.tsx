@@ -33,8 +33,8 @@ export default function Navbar() {
             href="#contact"
             className="hidden md:inline-flex btn-primary text-sm"
           >
-            <span className="material-symbols-outlined text-lg">send</span>
-            Hire Me
+            <span className="material-symbols-outlined text-lg">mail</span>
+            Contact Me
           </a>
 
           <button
@@ -65,8 +65,8 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="btn-primary mt-4"
           >
-            <span className="material-symbols-outlined text-lg">send</span>
-            Hire Me
+            <span className="material-symbols-outlined text-lg">mail</span>
+            Contact Me
           </a>
         </div>
       )}
