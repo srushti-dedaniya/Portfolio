@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { socialLinks } from "@/data/social";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
+import { skillCategories } from "@/data/skills";
+import { socialLinks } from "@/data/social";
+import { useState } from "react";
 
 export default function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
@@ -15,123 +16,141 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <section id="contact" className="py-24 px-6 md:px-12">
       <motion.div
+        className="max-w-container-max mx-auto"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
         <motion.div variants={fadeInUp} className="mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">
-              Contact
-            </span>
-          </div>
-          <h2 className="font-display-lg text-headline-lg md:text-display-lg text-on-surface">
-            Let&apos;s <span className="text-primary">Connect</span>
+          <span className="text-accent font-label text-label-lg uppercase tracking-widest block mb-4">
+            Contact
+          </span>
+          <h2 className="font-display text-display-lg md:text-display-xl text-primary">
+            Let&apos;s Work Together
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div variants={fadeInUp} className="flex flex-col gap-8">
-            <p className="text-on-surface-variant text-body-lg max-w-lg">
-              Have a project in mind, a question, or just want to say hello?
-              I&apos;d love to hear from you. Drop me a message and I&apos;ll get
-              back to you soon.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <motion.div variants={fadeInUp}>
+            <h3 className="font-display text-display-sm text-primary mb-6">
+              Core Expertise
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {skillCategories.map((cat) => (
+                <div key={cat.category} className="glass-panel p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="material-symbols-outlined text-accent text-xl">
+                      {cat.icon}
+                    </span>
+                    <h4 className="font-display text-body-lg text-primary font-semibold">
+                      {cat.category}
+                    </h4>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.skills.map((skill) => (
+                      <span key={skill} className="skill-tag text-xs">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
 
-            <div className="flex gap-4">
+            <div className="mt-8 flex gap-4">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="glass-pane w-12 h-12 rounded-xl flex items-center justify-center hover:-translate-y-1 transition-all duration-300 border border-white/5"
+                  className="glass-panel-sm w-12 h-12 flex items-center justify-center hover:-translate-y-1 hover:border-accent/30 transition-all duration-300"
                 >
-                  <span className="material-symbols-outlined text-primary">
+                  <span className="material-symbols-outlined text-accent text-xl">
                     {link.icon}
                   </span>
                 </a>
               ))}
             </div>
-
-            <div className="glass-pane rounded-[24px] p-6 border border-white/5">
-              <span className="font-label-sm text-on-surface-variant block mb-1">Email me at</span>
-              <a href="mailto:srushti@example.com" className="text-primary font-headline-md hover:underline">
-                srushti@example.com
-              </a>
-            </div>
           </motion.div>
 
-          <motion.form
-            variants={fadeInUp}
-            onSubmit={handleSubmit}
-            className="glass-pane p-8 rounded-[24px] flex flex-col gap-6 border border-white/5"
-          >
-            <div className="flex flex-col gap-2">
-              <label className="font-label-sm text-on-surface-variant uppercase tracking-widest">
-                Your Name
-              </label>
-              <input
-                type="text"
-                placeholder="John Doe"
-                required
-                className="bg-surface-container-low border border-white/5 p-4 rounded-xl font-body-md text-on-surface focus:border-primary/50 focus:outline-none transition-all placeholder:text-on-surface-variant/30"
-              />
-            </div>
+          <motion.div variants={fadeInUp}>
+            <h3 className="font-display text-display-sm text-primary mb-6">
+              Get In Touch
+            </h3>
+            <p className="text-secondary text-body-lg mb-8">
+              Have a project in mind, a question, or just want to say hello?
+              I&apos;d love to hear from you.
+            </p>
 
-            <div className="flex flex-col gap-2">
-              <label className="font-label-sm text-on-surface-variant uppercase tracking-widest">
-                Email Address
-              </label>
-              <input
-                type="email"
-                placeholder="john@example.com"
-                required
-                className="bg-surface-container-low border border-white/5 p-4 rounded-xl font-body-md text-on-surface focus:border-primary/50 focus:outline-none transition-all placeholder:text-on-surface-variant/30"
-              />
-            </div>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <label className="text-muted text-label-md uppercase tracking-widest">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  required
+                  className="input-field"
+                />
+              </div>
 
-            <div className="flex flex-col gap-2 flex-grow">
-              <label className="font-label-sm text-on-surface-variant uppercase tracking-widest">
-                Your Message
-              </label>
-              <textarea
-                placeholder="Tell me about your project or just say hi..."
-                rows={5}
-                required
-                className="bg-surface-container-low border border-white/5 p-4 rounded-xl font-body-md text-on-surface focus:border-primary/50 focus:outline-none transition-all resize-none placeholder:text-on-surface-variant/30 flex-grow"
-              />
-            </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-muted text-label-md uppercase tracking-widest">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  placeholder="john@example.com"
+                  required
+                  className="input-field"
+                />
+              </div>
 
-            <button
-              type="submit"
-              disabled={status !== "idle"}
-              className="w-full solar-button text-on-primary px-8 py-4 rounded-full font-label-md font-bold uppercase tracking-[0.15em] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50"
-            >
-              {status === "idle" && (
-                <>
-                  Send Message
-                  <span className="material-symbols-outlined">send</span>
-                </>
-              )}
-              {status === "sending" && (
-                <>
-                  <span className="material-symbols-outlined animate-spin">autorenew</span>
-                  Sending...
-                </>
-              )}
-              {status === "sent" && (
-                <>
-                  <span className="material-symbols-outlined">check_circle</span>
-                  Sent!
-                </>
-              )}
-            </button>
-          </motion.form>
+              <div className="flex flex-col gap-2 flex-grow">
+                <label className="text-muted text-label-md uppercase tracking-widest">
+                  Your Message
+                </label>
+                <textarea
+                  placeholder="Tell me about your project or just say hi..."
+                  rows={5}
+                  required
+                  className="input-field resize-none flex-grow"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={status !== "idle"}
+                className="btn-primary w-full justify-center py-4 text-base disabled:opacity-50"
+              >
+                {status === "idle" && (
+                  <>
+                    Send Message
+                    <span className="material-symbols-outlined">send</span>
+                  </>
+                )}
+                {status === "sending" && (
+                  <>
+                    <span className="material-symbols-outlined animate-spin">
+                      autorenew
+                    </span>
+                    Sending...
+                  </>
+                )}
+                {status === "sent" && (
+                  <>
+                    <span className="material-symbols-outlined">check_circle</span>
+                    Sent!
+                  </>
+                )}
+              </button>
+            </form>
+          </motion.div>
         </div>
       </motion.div>
     </section>

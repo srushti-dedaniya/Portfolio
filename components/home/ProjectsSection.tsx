@@ -1,108 +1,141 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { projects } from "@/data/projects";
 import { staggerContainer, fadeInUp } from "@/lib/animations";
+import { projects } from "@/data/projects";
+
+const colorMap = {
+  blue: "from-blue-500/20 to-blue-600/5",
+  purple: "from-purple-500/20 to-purple-600/5",
+  red: "from-red-500/20 to-red-600/5",
+  emerald: "from-emerald-500/20 to-emerald-600/5",
+};
+
+const statusColorMap = {
+  Live: "bg-emerald-500/20 text-emerald-400",
+  "In Development": "bg-amber-500/20 text-amber-400",
+  Completed: "bg-accent/20 text-accent",
+};
 
 export default function ProjectsSection() {
-  const trackRef = useRef<HTMLDivElement>(null);
-
   return (
-    <section id="projects" className="py-24 overflow-hidden">
+    <section id="projects" className="py-24 px-6 md:px-12">
       <motion.div
-        className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12"
+        className="max-w-container-max mx-auto"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        <motion.div variants={fadeInUp}>
-          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">
-              Projects
-            </span>
-          </div>
-          <h2 className="font-display-lg text-headline-lg md:text-display-lg text-on-surface">
-            Things I Have <span className="text-primary">Built</span>
+        <motion.div variants={fadeInUp} className="mb-16">
+          <span className="text-accent font-label text-label-lg uppercase tracking-widest block mb-4">
+            Projects
+          </span>
+          <h2 className="font-display text-display-lg md:text-display-xl text-primary">
+            Things I&apos;ve Built
           </h2>
         </motion.div>
-      </motion.div>
 
-      <div className="relative">
-        <div
-          ref={trackRef}
-          className="flex gap-8 overflow-x-auto snap-x snap-mandatory px-margin-mobile md:px-margin-desktop pb-8 scrollbar-hide"
-          style={{ scrollbarWidth: "none" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.article
               key={project.id}
               variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="snap-center flex-shrink-0 w-[85vw] md:w-[600px] lg:w-[700px] h-[420px] rounded-[24px] overflow-hidden relative group cursor-pointer"
+              className={`bento-card overflow-hidden flex flex-col ${
+                index === 0 ? "md:row-span-2" : ""
+              }`}
             >
               {project.imageUrl ? (
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                  className={`h-48 md:h-64 bg-cover bg-center bg-gradient-to-br ${
+                    colorMap[project.color]
+                  }`}
                   style={{ backgroundImage: `url('${project.imageUrl}')` }}
                 />
               ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-surface-container-high to-tertiary/20" />
+                <div
+                  className={`h-48 md:h-64 bg-gradient-to-br ${
+                    colorMap[project.color]
+                  } flex items-center justify-center`}
+                >
+                  <span className="material-symbols-outlined text-6xl text-white/20">
+                    deployed_code
+                  </span>
+                </div>
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-8 flex flex-col gap-3">
+              <div className="p-6 flex flex-col gap-4 flex-grow">
                 <div className="flex items-center gap-3">
                   {project.status && (
-                    <span className={`px-3 py-1 rounded-full text-label-sm font-label-sm ${
-                      project.status === "Live"
-                        ? "bg-green-500/20 text-green-400"
-                        : project.status === "In Development"
-                        ? "bg-tertiary/20 text-tertiary"
-                        : "bg-primary/20 text-primary"
-                    }`}>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        statusColorMap[project.status]
+                      }`}
+                    >
                       {project.status}
                     </span>
                   )}
-                  <span className="text-on-surface-variant text-label-sm font-label-sm">
+                  <span className="text-muted text-body-sm">
                     {project.category}
                   </span>
                 </div>
 
-                <h3 className="font-headline-lg text-headline-lg text-white">
+                <h3 className="font-display text-display-sm text-primary">
                   {project.title}
                 </h3>
 
-                <p className="text-on-surface-variant text-body-md max-w-lg line-clamp-2">
+                <p className="text-secondary text-body-sm leading-relaxed flex-grow">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mt-2">
+                <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-white/10 text-on-surface text-label-sm font-label-sm px-3 py-1 rounded-full"
-                    >
+                    <span key={tech} className="tech-pill">
                       {tech}
                     </span>
                   ))}
                 </div>
 
+                {project.stats && (
+                  <div className="flex gap-4 mt-2">
+                    {project.stats.map((stat) => (
+                      <div key={stat.label} className="text-center">
+                        <span className="text-accent font-display text-body-lg font-bold block">
+                          {stat.value}
+                        </span>
+                        <span className="text-muted text-label-sm">
+                          {stat.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <div className="flex gap-3 mt-2">
-                  {project.link && (
+                  {project.liveUrl && (
                     <a
-                      href={project.link}
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="solar-button px-6 py-2 rounded-full font-label-md text-white text-label-md inline-flex items-center gap-2"
+                      className="btn-primary text-sm py-2 px-4"
                     >
-                      Visit
-                      <span className="material-symbols-outlined text-lg">arrow_outward</span>
+                      <span className="material-symbols-outlined text-lg">
+                        arrow_outward
+                      </span>
+                      Live Demo
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-outline text-sm py-2 px-4"
+                    >
+                      <span className="material-symbols-outlined text-lg">
+                        code
+                      </span>
+                      GitHub
                     </a>
                   )}
                 </div>
@@ -110,7 +143,7 @@ export default function ProjectsSection() {
             </motion.article>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

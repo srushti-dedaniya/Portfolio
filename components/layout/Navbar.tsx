@@ -1,64 +1,73 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { navLinks } from "@/data/social";
-import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 max-w-container-max mx-auto">
-      <nav className="bg-surface/60 backdrop-blur-[40px] rounded-full mt-4 md:mx-margin-desktop border-t border-l border-white/10 drop-shadow-[0_0_20px_rgba(245,158,11,0.2)] w-full flex justify-between items-center px-gutter py-4">
-        <Link href="#home" className="font-display-lg text-headline-md tracking-tighter text-on-surface">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <nav className="mx-auto max-w-container-max mt-4 mx-4 md:mx-auto glass-panel-sm px-6 py-3 flex items-center justify-between">
+        <a
+          href="#home"
+          className="font-display text-lg font-bold tracking-tight text-primary"
+        >
           Srushti Dedaniya
-        </Link>
+        </a>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={cn(
-                "font-body-md text-body-md transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
-                "text-on-surface-variant hover:text-tertiary"
-              )}
+              className="text-secondary hover:text-primary text-body-sm font-medium transition-colors duration-300"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <a
-          href="#contact"
-          className="active:scale-95 transition-transform bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md"
-        >
-          Let&apos;s Talk
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="#contact"
+            className="hidden md:inline-flex btn-primary text-sm"
+          >
+            <span className="material-symbols-outlined text-lg">send</span>
+            Hire Me
+          </a>
 
-        <button
-          className="md:hidden text-primary"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          <span className="material-symbols-outlined text-3xl">
-            {mobileOpen ? "close" : "menu"}
-          </span>
-        </button>
+          <button
+            className="md:hidden text-secondary hover:text-primary transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            <span className="material-symbols-outlined text-2xl">
+              {mobileOpen ? "close" : "menu"}
+            </span>
+          </button>
+        </div>
       </nav>
 
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-24 bg-surface/95 backdrop-blur-[40px] z-40 flex flex-col items-center gap-8 pt-16">
+        <div className="md:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center gap-8 pt-16">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="font-headline-md text-headline-md text-on-surface-variant hover:text-tertiary transition-colors duration-300"
+              className="font-display text-display-sm text-secondary hover:text-primary transition-colors duration-300"
             >
               {link.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={() => setMobileOpen(false)}
+            className="btn-primary mt-4"
+          >
+            <span className="material-symbols-outlined text-lg">send</span>
+            Hire Me
+          </a>
         </div>
       )}
     </header>

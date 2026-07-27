@@ -5,63 +5,98 @@ import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop pt-32">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center px-6 md:px-12 pt-24"
+    >
       <motion.div
-        className="relative z-10 flex flex-col items-center max-w-4xl text-center"
+        className="max-w-container-max mx-auto w-full"
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
       >
-        <motion.span
-          variants={fadeInUp}
-          className="font-label-md text-label-md text-primary tracking-[0.2em] mb-6 animate-pulse"
-        >
-          FULL-STACK DEVELOPER
-        </motion.span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-8">
+            <motion.div variants={fadeInUp} className="flex flex-col gap-2">
+              <span className="text-accent font-label text-label-lg uppercase tracking-widest">
+                Full-Stack Developer
+              </span>
+              <h1 className="font-display text-display-xl md:text-[5.5rem] leading-[1.05] tracking-tight text-primary">
+                Hi, I&apos;m
+                <br />
+                <span className="text-accent">Srushti</span>
+                <br />
+                Dedaniya
+              </h1>
+            </motion.div>
 
-        <motion.h1
-          variants={fadeInUp}
-          className="font-display-lg text-display-lg text-on-surface leading-[0.9] mb-8 select-none"
-        >
-          SRUSHTI <br /> DEDANIYA
-        </motion.h1>
+            <motion.p
+              variants={fadeInUp}
+              className="text-secondary text-body-xl max-w-lg leading-relaxed"
+            >
+              I build clean, fast, and user-friendly websites and apps. Passionate
+              about UI/UX design, full-stack development, and solving real
+              problems with code.
+            </motion.p>
 
-        <motion.p
-          variants={fadeInUp}
-          className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12 opacity-80"
-        >
-          Designing experiences. Building software. Solving real-world problems
-          with clean code and creative thinking.
-        </motion.p>
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-wrap items-center gap-4"
+            >
+              <a href="#projects" className="btn-primary">
+                <span className="material-symbols-outlined text-lg">
+                  arrow_outward
+                </span>
+                View Projects
+              </a>
+              <a href="#contact" className="btn-outline">
+                Contact Me
+              </a>
+            </motion.div>
+          </div>
 
-        <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-4">
-          <a href="#projects" className="solar-button px-10 py-5 rounded-full font-headline-md text-headline-md text-white inline-flex items-center gap-3 group">
-            Explore My Work
-            <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform duration-300">
-              arrow_outward
-            </span>
-          </a>
-          <a
-            href="/resume/Srushti_Dedaniya_Resume.pdf"
-            download
-            className="px-10 py-5 rounded-full font-headline-md text-headline-md text-on-surface inline-flex items-center gap-3 border border-white/10 hover:border-primary/40 hover:text-primary transition-all duration-300"
+          <motion.div
+            variants={fadeInUp}
+            className="hidden lg:grid grid-cols-2 gap-4"
           >
-            Download Resume
-            <span className="material-symbols-outlined">download</span>
-          </a>
-        </motion.div>
-      </motion.div>
+            <div className="bento-card p-6 flex flex-col gap-3">
+              <span className="material-symbols-outlined text-accent text-2xl">
+                palette
+              </span>
+              <h3 className="font-display text-display-sm text-primary">
+                UI/UX Design
+              </h3>
+              <p className="text-secondary text-body-sm">
+                Clean, modern interfaces that people enjoy using.
+              </p>
+            </div>
 
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden">
-        <div className="marquee-track whitespace-nowrap py-4">
-          <span className="font-label-md text-primary/40 uppercase tracking-[0.15em]">
-            {"Full-Stack Developer \u00A0\u00A0\u00A0/ \u00A0\u00A0\u00A0UI/UX Designer \u00A0\u00A0\u00A0/ \u00A0\u00A0\u00A0Problem Solver \u00A0\u00A0\u00A0/ \u00A0\u00A0\u00A0".repeat(4)}
-          </span>
-          <span className="font-label-md text-primary/40 uppercase tracking-[0.15em]">
-            {"Full-Stack Developer \u00A0\u00A0\u00A0/ \u00A0\u00A0\u00A0UI/UX Designer \u00A0\u00A0\u00A0/ \u00A0\u00A0\u00A0Problem Solver \u00A0\u00A0\u00A0/ \u00A0\u00A0\u00A0".repeat(4)}
-          </span>
+            <div className="bento-card p-6 flex flex-col gap-3 mt-8">
+              <span className="material-symbols-outlined text-accent text-2xl">
+                code
+              </span>
+              <h3 className="font-display text-display-sm text-primary">
+                Full-Stack Dev
+              </h3>
+              <p className="text-secondary text-body-sm">
+                Complete web apps from database to frontend.
+              </p>
+            </div>
+
+            <div className="bento-card p-6 flex flex-col gap-3 col-span-2">
+              <span className="material-symbols-outlined text-accent text-2xl">
+                phone_android
+              </span>
+              <h3 className="font-display text-display-sm text-primary">
+                Mobile Apps
+              </h3>
+              <p className="text-secondary text-body-sm">
+                Native and cross-platform mobile applications.
+              </p>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

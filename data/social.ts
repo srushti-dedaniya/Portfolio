@@ -1,16 +1,15 @@
 import { SocialLink } from "@/types/project";
 
 export const socialLinks: SocialLink[] = [
-  { name: "LinkedIn", url: "https://linkedin.com", icon: "public", color: "primary" },
-  { name: "GitHub", url: "https://github.com", icon: "code", color: "tertiary" },
-  { name: "Dribbble", url: "https://dribbble.com", icon: "brush", color: "secondary" },
-  { name: "Instagram", url: "https://instagram.com", icon: "photo_camera", color: "error" },
+  { name: "LinkedIn", url: "https://linkedin.com", icon: "public" },
+  { name: "GitHub", url: "https://github.com", icon: "code" },
+  { name: "Twitter", url: "https://twitter.com", icon: "tag" },
+  { name: "Email", url: "mailto:srushti@example.com", icon: "mail" },
 ];
 
 export const navLinks = [
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
