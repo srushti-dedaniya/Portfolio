@@ -120,7 +120,7 @@ export default function Hero() {
               variants={fadeInUp}
               className="flex flex-wrap items-center gap-4"
             >
-              <a href="/resume/Srushti_Dedaniya_Resume.pdf" download className="btn-primary">
+              <a href="/resume/Resume_Srushti.pdf" download className="btn-primary">
                 <span className="material-symbols-outlined text-lg">download</span>
                 Download Resume
               </a>
