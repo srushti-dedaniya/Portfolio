@@ -3,6 +3,28 @@ import { Project } from "@/types/project";
 export const projects: Project[] = [
   {
     id: "1",
+    title: "Heat Mitigation",
+    slug: "heat-mitigation",
+    description:
+      "An AI-powered urban heat island analysis platform for Mumbai, Thane & Navi Mumbai. Uses satellite imagery and machine learning to predict land surface temperatures and recommend cooling interventions.",
+    longDescription:
+      "Built for the Bhartiya Antariksh Hackathon 2026 (ISRO), this platform integrates satellite imagery (Landsat 8/9, Sentinel-2), OpenStreetMap, weather, and population data to predict land surface temperatures and recommend cooling interventions. It features an XGBoost regressor that predicts land surface temperature from 11 urban features with SHAP analysis, and ThermaNet, a CNN that classifies thermal tiles into heat classes with GradCAM visualizations. A React dashboard maps city zones on Leaflet and lets users simulate cooling interventions like cool roofs, green roofs, and urban greening.",
+    imageUrl: "/images/certificates/ThermaCity.jpg",
+    imageAlt: "ThermaCity Urban Heat Mitigation Dashboard",
+    status: "Completed",
+    techStack: ["Python", "FastAPI", "XGBoost", "PyTorch", "React", "Leaflet", "Google Earth Engine"],
+    category: "Web Platform",
+    featured: true,
+    color: "red",
+    stats: [
+      { label: "ML Models", value: "2" },
+      { label: "Interventions", value: "5" },
+    ],
+    githubUrl: "https://github.com/srushti-dedaniya/Heat-Mitigation",
+    liveUrl: "https://heat-mitigation.vercel.app/",
+  },
+  {
+    id: "2",
     title: "BagFix Pro",
     slug: "bagfix-pro",
     description:
@@ -24,7 +46,7 @@ export const projects: Project[] = [
     downloadUrl: "/apk/BagFixPro.apk",
   },
   {
-    id: "2",
+    id: "3",
     title: "Ocean Pollution Management System",
     slug: "ocean-pollution",
     description:
@@ -44,28 +66,6 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7486843987807559680/",
     githubUrl: "https://github.com/srushti-dedaniya/Ocean-Pollution-Management-System",
-  },
-  {
-    id: "3",
-    title: "Heat Mitigation",
-    slug: "heat-mitigation",
-    description:
-      "An AI-powered urban heat island analysis platform for Mumbai, Thane & Navi Mumbai. Uses satellite imagery and machine learning to predict land surface temperatures and recommend cooling interventions.",
-    longDescription:
-      "Built for the Bhartiya Antariksh Hackathon 2026 (ISRO), this platform integrates satellite imagery (Landsat 8/9, Sentinel-2), OpenStreetMap, weather, and population data to predict land surface temperatures and recommend cooling interventions. It features an XGBoost regressor that predicts land surface temperature from 11 urban features with SHAP analysis, and ThermaNet, a CNN that classifies thermal tiles into heat classes with GradCAM visualizations. A React dashboard maps city zones on Leaflet and lets users simulate cooling interventions like cool roofs, green roofs, and urban greening.",
-    imageUrl: "/images/certificates/ThermaCity.jpg",
-    imageAlt: "ThermaCity Urban Heat Mitigation Dashboard",
-    status: "Completed",
-    techStack: ["Python", "FastAPI", "XGBoost", "PyTorch", "React", "Leaflet", "Google Earth Engine"],
-    category: "Web Platform",
-    featured: true,
-    color: "red",
-    stats: [
-      { label: "ML Models", value: "2" },
-      { label: "Interventions", value: "5" },
-    ],
-    githubUrl: "https://github.com/srushti-dedaniya/Heat-Mitigation",
-    liveUrl: "https://heat-mitigation.vercel.app/",
   },
   {
     id: "4",
