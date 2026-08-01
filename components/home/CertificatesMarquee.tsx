@@ -40,6 +40,27 @@ const certificates: Certificate[] = [
     ],
   },
   {
+    id: "3",
+    title: "Codeamble 2026",
+    issuer: "Zone of Engineering Innovators (ZEN)",
+    imageUrl: "/images/certificates/Codeamble_image.jpeg",
+    date: "2026",
+    description:
+      "Participated in Codeamble 2026, a national-level 24-hour hackathon organized by ZEN Club at A. C. Patil College of Engineering, Kharghar, Navi Mumbai, competing against 120+ teams to build impactful, real-world solutions.",
+    longDescription:
+      "Codeamble 2026 is a prestigious national-level innovation marathon organized by the Zone of Engineering Innovators (ZEN). The event followed a rigorous multi-stage elimination process — from an online technical blueprinting phase to a high-intensity 24-hour physical finale at A. C. Patil College of Engineering, Kharghar, Navi Mumbai. Our team worked through the full hackathon funnel, building a working prototype within the 24-hour coding marathon and competing against 120+ teams from across India.",
+    credentialUrl: "/images/certificates/Codeamble.jpg",
+    category: "Hackathon",
+    color: "purple",
+    highlights: [
+      "Competed in a national-level 24-hour hackathon with a prize pool of ₹5,00,000+",
+      "Advanced through online rounds and the offline grand finale at Navi Mumbai",
+      "Built a working prototype within the 24-hour coding marathon",
+      "Competed against 120+ teams from across India",
+      "Organized by Zone of Engineering Innovators (ZEN) with industry mentorship",
+    ],
+  },
+  {
     id: "2",
     title: "Robotics Techno-Connect Competition",
     issuer: "University of Mumbai",
