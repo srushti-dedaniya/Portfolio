@@ -177,6 +177,73 @@ export default function ContactSection() {
                 )}
               </button>
             </form>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="glass-panel p-8 mt-8 relative overflow-hidden group"
+              whileHover={{ borderColor: "rgba(124, 58, 237, 0.4)" }}
+            >
+              <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 blur-3xl rounded-full group-hover:bg-accent/10 transition-colors duration-500" />
+
+              <motion.h3
+                variants={fadeInUp}
+                className="font-display text-display-sm text-primary mb-6 flex items-center gap-3"
+              >
+                <span className="w-1.5 h-6 rounded-full bg-accent" />
+                Currently
+              </motion.h3>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                  whileHover={{ x: 4 }}
+                >
+                  <span className="w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">location_on</span>
+                  </span>
+                  <span className="text-secondary text-body-lg">Mumbai, India</span>
+                </motion.div>
+
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                  whileHover={{ x: 4 }}
+                >
+                  <span className="w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">school</span>
+                  </span>
+                  <span className="text-secondary text-body-lg">B.Tech Computer Engineering</span>
+                </motion.div>
+
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                  whileHover={{ x: 4 }}
+                >
+                  <span className="w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">work</span>
+                  </span>
+                  <span className="text-secondary text-body-lg">Open to Internships</span>
+                </motion.div>
+
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                  whileHover={{ x: 4 }}
+                >
+                  <span className="w-10 h-10 rounded-full bg-accent/15 text-accent flex items-center justify-center flex-shrink-0">
+                    <span className="material-symbols-outlined text-xl">bolt</span>
+                  </span>
+                  <span className="text-secondary text-body-lg">Building AI & Android Projects</span>
+                </motion.div>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-accent/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </motion.div>
           </motion.div>
         </div>
       </motion.div>

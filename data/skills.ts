@@ -2,33 +2,49 @@ import { SkillCategory } from "@/types/project";
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: "Languages",
+    category: "Programming Languages",
     icon: "code",
-    skills: ["Java", "Python", "JavaScript", "TypeScript", "Kotlin", "C++"],
+    skills: ["C++", "Java", "Kotlin", "JavaScript", "TypeScript", "SQL"],
   },
   {
     category: "Frontend",
     icon: "palette",
-    skills: ["React", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "Framer Motion"],
+    skills: ["HTML5", "CSS3", "Tailwind CSS", "React.js", "Next.js", "Responsive Design"],
   },
   {
     category: "Backend",
     icon: "dns",
-    skills: ["Node.js", "Express.js", "FastAPI", "Spring Boot", "REST APIs", "GraphQL"],
+    skills: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "Firebase Authentication"],
   },
   {
-    category: "Mobile",
+    category: "Mobile Development",
     icon: "phone_android",
-    skills: ["React Native", "Kotlin", "Android SDK", "Firebase"],
+    skills: ["Android Development", "Kotlin", "Jetpack Compose", "XML", "Firebase"],
   },
   {
-    category: "Database",
+    category: "Databases",
     icon: "storage",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Prisma"],
+    skills: ["MongoDB", "MySQL", "Firebase Firestore", "SQLite", "Room Database"],
   },
   {
-    category: "Tools",
+    category: "Tools & Platforms",
     icon: "build",
-    skills: ["Git", "Docker", "AWS", "Linux", "Figma", "Postman"],
+    skills: ["Git", "GitHub", "VS Code", "Android Studio", "Postman", "Figma", "Vercel"],
+  },
+  {
+    category: "Core Computer Science",
+    icon: "school",
+    skills: ["Data Structures & Algorithms", "Object-Oriented Programming (OOP)", "Database Management Systems (DBMS)", "Operating Systems", "Computer Networks"],
+  },
+  {
+    category: "Management Skills",
+    icon: "groups",
+    skills: [
+      "Core Organizer - TATTVA (Student Project Showcase)",
+      "Hackathon Organizer - CREATHON",
+      "University Fair - International Exposure Event",
+      "HR Meet 3.O - Industry Interaction Event",
+      "Hackathon Participant",
+    ],
   },
 ];
